@@ -1,0 +1,51 @@
+{
+  "name": "aliyun-docker-trigger",
+  "version": "1.0.0",
+  "description": "阿里云容器服务触发器处理",
+  "keywords": [
+    "aliyun",
+    "docker",
+    "hook"
+  ],
+  "homepage": "https://github.com/zbjcs/aliyun-docker-trigger#readme",
+  "bugs": {
+    "url": "https://github.com/zbjcs/aliyun-docker-trigger/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbjcs/aliyun-docker-trigger.git"
+  },
+  "license": "ISC",
+  "author": "zbjcs",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --check --write \"./**/*.{js,json}\"",
+    "sort": "npx sort-package-json",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,json}": [
+      "prettier --check --write"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.17",
+    "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  }
+}

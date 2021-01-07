@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "aliyun-docker-trigger",
+      "script": "index.js",
+      "watch": true,
+      "node_args": "--harmony",
+      "merge_logs": false,
+      "cwd": "./",
+      "instances": 1,
+      "exec_mode": "cluster",
+      "error_file": "/var/log/aliyun-docker-trigger/error.log",
+      "out_file": "/var/log/aliyun-docker-trigger/out.log"
+    }
+  ]
+}
