@@ -7,6 +7,7 @@ module.exports = {
   MAIL_FROM: '"bot 👻" <zbj_taxation@126.com>',
   MAIL_TO_DEV: 'luojiejian@zbj.com', // 多个时逗号分隔
   MAIL_TO_PRO: 'luojiejian@zbj.com', // 多个时逗号分隔
+  DEPLOY_DOMAIN: 'qdbjgx.com',
   DEPLOY_DEV_PORT: 9100,
   DEPLOY_PROD_PORT: 9200,
 };

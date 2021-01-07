@@ -11,6 +11,7 @@ const {
   APP_PORT,
   MAIL_TO_DEV,
   MAIL_TO_PRO,
+  DEPLOY_DOMAIN,
   DEPLOY_DEV_PORT,
   DEPLOY_PROD_PORT,
 } = require('./config');
@@ -73,7 +74,9 @@ app.post('/trigger', jsonParser, async (req, res) => {
 
       await sendMail({
         subject: `【上线成功】税局站点 - ${desc}`,
-        text: `已经上线成功了，快去看看吧。https://${tag === 'test' ? 'test' : 'www'}.qdbjgx.com/`,
+        text: `已经上线成功了，快去看看吧。https://${
+          tag === 'test' ? 'test' : 'www'
+        }.${DEPLOY_DOMAIN}`,
         html: '',
         to: mailTo,
       });
