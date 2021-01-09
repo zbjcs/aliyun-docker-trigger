@@ -62,7 +62,7 @@ app.post('/trigger', jsonParser, async (req, res) => {
       await runCommand(`sudo docker pull ${imageName}`);
       const appPort = tag == 'test' ? DEPLOY_DEV_PORT : DEPLOY_PROD_PORT;
       await runCommand(
-        `sudo docker run --name ${containerName} -d -v /var/log/${containerName}:/outlogs -e APP_RUNTIME=${tag} -p ${appPort}:3000 ${imageName}`
+        `sudo docker run --name ${containerName} -d -v /var/log/${containerName}:/outlogs -v /usr/src/${containerName}:/config -e APP_RUNTIME=${tag} -p ${appPort}:3000 ${imageName}`
       );
 
       const desc = tag === 'test' ? '测试' : '正式';
